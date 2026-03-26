@@ -18,8 +18,8 @@ import org.springframework.web.multipart.MultipartFile;
 @RestController
 public class AppController {
 
-  private BoardRepository boardRepository;
-  private S3Operations s3Operations;
+  private final BoardRepository boardRepository;
+  private final S3Operations s3Operations;
 
   @Value("${spring.cloud.aws.s3.bucket}")
   private String bucketName;
@@ -45,6 +45,7 @@ public class AppController {
 
   @PostMapping("boards")
   public ResponseEntity<Board> createBoard(
+
       @RequestPart("image") MultipartFile imageFile,
       @RequestPart("title") String title,
       @RequestPart("content") String content
@@ -63,6 +64,6 @@ public class AppController {
     }
     Board board = new Board(title, content, imageUrl);
     boardRepository.save(board);
-    return ResponseEntity.ok().body(board);
+    return ResponseEntity.ok().body(board); //
   }
 }

@@ -13,9 +13,8 @@ spring:
   cloud:
     aws:
       credentials:
-        access-key:
-        # IAM 통해서 발급받은 액세스 키
-        secret-key:  # IAM 통해서 발급받은 비밀 액세스 키
+        access-key: AKIAXS24LEQ63XORPSPR # IAM 통해서 발급받은 액세스 키
+        secret-key: 1DtWovpjVF60Oto3QP3SxVjCl41vbbvVWgzLi7oM # IAM 통해서 발급받은 비밀 액세스 키
       s3:
         bucket: dnwls0022-instagram-uploaded-files # 생성한 버킷명
       region:
